@@ -1,0 +1,19 @@
+.layout {
+  position: relative;
+  background: #ffffff;
+  padding: 143px 74px 86px 64px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+
+  @media screen and (max-width: 1000px) {
+    padding: 100px 40px;
+  }
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 580px) {
+    padding: 44px 0 159px;
+  }
+}

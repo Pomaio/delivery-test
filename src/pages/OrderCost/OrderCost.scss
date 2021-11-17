@@ -1,0 +1,67 @@
+.OrderCost {
+  &__wrap {
+    flex: 1 0 250px;
+    max-width: 375px;
+    height: 200px;
+    background: #f7f7f7;
+
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    padding-bottom: 39px;
+    @media screen and (max-width: 800px) {
+      flex: 1 1 100%;
+      max-width: unset;
+    }
+    @media screen and (max-width: 580px) {
+      position: absolute;
+      bottom: calc(159px + 48px + 32px);
+      left: 0;
+      right: 0;
+    }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    text-transform: uppercase;
+    margin: 0px;
+    margin-bottom: 8px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    & > * {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      color: #757575;
+      font-weight: 300;
+      font-size: 15px;
+    }
+
+    .free {
+      color: #09b42f;
+    }
+  }
+
+  &__divider {
+    display: block;
+    width: 100%;
+    border-bottom: solid 1px #e3e3e3;
+    margin: 20px 0px;
+  }
+
+  &__result {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    & > * {
+      margin: 0px;
+      text-transform: uppercase;
+    }
+  }
+}

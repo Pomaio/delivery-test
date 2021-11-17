@@ -1,0 +1,104 @@
+.DeliveryProgress__point {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 100;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    left: calc(50% - 8px / 2 + 0.5px);
+    top: calc(50% - 8px / 2 + 2px);
+    background: #000000;
+    border-radius: 50%;
+  }
+  &:first-of-type {
+    &:before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: calc(50% - 8px / 2 + 0.5px);
+      top: calc(50% + 2px);
+      left: 0;
+      background: white;
+    }
+    @media screen and (max-width: 580px) {
+      align-items: flex-start;
+      &:before {
+        display: none;
+      }
+      &:after {
+        left: 0;
+      }
+    }
+  }
+  &:last-of-type {
+    &:before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: calc(50% - 8px / 2 + 0.5px);
+      top: calc(50% + 2px);
+      right: 0;
+      background: white;
+    }
+    @media screen and (max-width: 580px) {
+      align-items: flex-end;
+      &:before {
+        display: none;
+      }
+      &:after {
+        left: unset;
+        right: 0;
+      }
+    }
+  }
+  & > span {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 160%;
+  }
+
+  &.disabled {
+    &:after {
+      background: white;
+      border: 1px solid #cccccc;
+    }
+    svg {
+      // need load svg icon as react element
+      // if we want custpmize color
+    }
+    span {
+      color: #acacac;
+    }
+  }
+}
+
+.DeliveryProgress__bar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    width: 100%;
+    height: 1px;
+    background: #cccccc;
+  }
+
+  &__current {
+    content: '';
+    position: absolute;
+    top: 36px;
+    width: 100%;
+    height: 1px;
+    background: #000000;
+  }
+}
